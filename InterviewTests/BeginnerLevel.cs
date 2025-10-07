@@ -2,9 +2,10 @@
 using System.Linq;
 
 //To make factorials
+//using System;
 public class FactorialProgram
 {
-    public static void Main()
+    public static void FactorialProgramMain()
     {
         int output = 1;
         int N = int.Parse(Console.ReadLine());
@@ -20,7 +21,7 @@ public class FactorialProgram
 //uing System;
 public class IOProgram
 {
-    public static void Main()
+    public static void IOProgramMain()
     {
         int In = int.Parse(Console.ReadLine());
         string Input = Console.ReadLine();
@@ -33,7 +34,7 @@ public class IOProgram
 //using System;
 public class FavoriteSinger
 {
-    public static void Main()
+    public static void FavoriteSingerMain()
     {
         long N = long.Parse(Console.ReadLine());
         long[] Songs = Array.ConvertAll(Console.ReadLine().Split(' '), long.Parse);
@@ -74,12 +75,15 @@ public class FavoriteSinger
     }
 }
 
+
+
+
 //ZOOO
 //using System;
 //using System.Linq;
 public class ZOOO
 {
-    public static void Main()
+    public static void ZOOOMain()
     {
         string Input = Console.ReadLine().ToUpper();
         int Z = 0;
@@ -102,7 +106,7 @@ public class ZOOO
 //using System;
 public class Divisability
 {
-    public static void Main()
+    public static void DivisabilityMain()
     {
         int N = int.Parse(Console.ReadLine());
         int[] Numbers = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);

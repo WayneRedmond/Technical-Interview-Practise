@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 
 
-public class HelloWorld
+public class BBDPrac
 {
-    static public void Main()
+    static public void BBDPRacMain()
     {
         String line;
         String A;
