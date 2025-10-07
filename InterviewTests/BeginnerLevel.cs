@@ -125,6 +125,21 @@ public class Divisability
             Console.WriteLine("No");
         }
     }
+    //For the time problem I had I made a cheat lol
+    //public static void Main()
+    //{
+    //    int N = int.Parse(Console.ReadLine());
+    //    int[] Numbers = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+    //    int Last = Numbers[N - 1];
+    //    if (Last % 10 == 0)
+    //    {
+    //        Console.WriteLine("Yes");
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine("No");
+    //    }
+    //}
 
 }
 
@@ -162,6 +177,46 @@ public class MaximimBorders
                 }
             }
             Console.WriteLine(max.ToString());
+        }
+    }
+}
+
+//using System;
+public class Splithouses
+{
+    public static void SplithousesMain()
+    {
+        int n = int.Parse(Console.ReadLine());
+        string input = Console.ReadLine();
+        string output = "";
+        bool possible = true;
+        for (int i = 0; i < n; i++)
+        {
+            if (i + 1 != n)
+            {
+                if (input[i] == input[i + 1] && input[i] == 'H')
+                {
+                    possible = false;
+                    break;
+                }
+            }
+            if (input[i] == '.')
+            {
+                output = output + "B";
+            }
+            else
+            {
+                output = output + "H";
+            }
+        }
+        if (possible)
+        {
+            Console.WriteLine("YES");
+            Console.WriteLine(output);
+        }
+        else
+        {
+            Console.WriteLine("NO");
         }
     }
 }
