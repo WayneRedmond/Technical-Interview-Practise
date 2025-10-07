@@ -129,3 +129,39 @@ public class Divisability
 }
 
 
+//using System;
+public class MaximimBorders
+{
+    public static void MaximimBordersMain()
+    {
+        int t = int.Parse(Console.ReadLine());
+        
+        for (int i = 0; i < t; i++)
+        {
+            int max = 0;
+            string[] input = Console.ReadLine().Split(' ');
+            int n = int.Parse(input[0]);
+            int m = int.Parse(input[1]);
+
+            for (int j = 0; j < n; j++)
+            {
+                string line = Console.ReadLine();
+                int counter = 0;
+                for (int k = 0; k < m; k++)
+                {
+                    
+                    if(line[k] == '#')
+                    {
+                        counter++;
+                    }
+
+                }
+                if (counter > max)
+                {
+                    max = counter;
+                }
+            }
+            Console.WriteLine(max.ToString());
+        }
+    }
+}
