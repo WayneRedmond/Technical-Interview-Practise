@@ -220,3 +220,46 @@ public class Splithouses
         }
     }
 }
+
+//using System;
+public class Ali
+{
+    public static void AliMain()
+    {
+
+        string input = Console.ReadLine();
+        bool possible = true;
+        int F = int.Parse(input[0].ToString()) + int.Parse(input[1].ToString());
+        if (F%2 != 0)
+        {
+            possible = false;
+        }
+        if (input[2] == 'A'|| input[2] == 'E' || input[2] == 'I' || input[2] == 'O' || input[2] == 'U' || input[2] == 'Y')
+        {
+            possible = false;
+        }
+        int S = int.Parse(input[3].ToString()) + int.Parse(input[4].ToString());
+        if (S % 2 != 0)
+        {
+            possible = false;
+        }
+        int T = int.Parse(input[4].ToString()) + int.Parse(input[5].ToString());
+        if (T % 2 != 0)
+        {
+            possible = false;
+        }
+        int V = int.Parse(input[7].ToString()) + int.Parse(input[8].ToString());
+        if (V % 2 != 0)
+        {
+            possible = false;
+        }
+        if (possible)
+        {
+            Console.WriteLine("valid");
+        }
+        else
+        {
+            Console.WriteLine("invalid");
+        }
+    }
+}
