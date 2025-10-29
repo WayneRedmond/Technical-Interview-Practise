@@ -32,46 +32,51 @@ public class IOProgram
 }
 //Favorite Singer Reading and counting arrays
 //using System;
+//using System.Collections.Generic;
+
 public class FavoriteSinger
 {
-    public static void FavoriteSingerMain()
+    public static void Main()
     {
         long N = long.Parse(Console.ReadLine());
         long[] Songs = Array.ConvertAll(Console.ReadLine().Split(' '), long.Parse);
-        long Singer = 0;
-        long Counter = 0;
+
+        // Count frequency of each song
+        Dictionary<long, long> songCount = new Dictionary<long, long>();
+
         for (int i = 0; i < N; i++)
         {
-            bool alreadyCounted = false;
-            for (int k = 0; k < i; k++)
+            if (songCount.ContainsKey(Songs[i]))
             {
-                if (Songs[k] == Songs[i])
-                {
-                    alreadyCounted = true;
-                    break;
-                }
+                songCount[Songs[i]]++;
             }
-            if (!alreadyCounted)
+            else
             {
-                long count = 0;
-                for (int j = 0; j < N; j++)
-                {
-                    if (Songs[j] == Songs[i])
-                        count++;
-                }
-
-                if (count > Counter)
-                {
-                    Counter = count;
-                    Singer = 1;
-                }
-                else if (count == Counter)
-                {
-                    Singer++;
-                }
+                songCount[Songs[i]] = 1;
             }
         }
-        Console.WriteLine(Singer.ToString());
+
+        // Find maximum frequency
+        long maxCount = 0;
+        foreach (var count in songCount.Values)
+        {
+            if (count > maxCount)
+            {
+                maxCount = count;
+            }
+        }
+
+        // Count singers with maximum frequency
+        long singersWithMaxCount = 0;
+        foreach (var count in songCount.Values)
+        {
+            if (count == maxCount)
+            {
+                singersWithMaxCount++;
+            }
+        }
+
+        Console.WriteLine(singersWithMaxCount);
     }
 }
 
@@ -260,6 +265,135 @@ public class Ali
         else
         {
             Console.WriteLine("invalid");
+        }
+    }
+}
+
+//using System;
+public class ToggleString
+{
+    public static void ToggleStringMain()
+    {
+        string input = Console.ReadLine();
+        string output = "";
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (char.IsUpper(input[i]))
+            {
+                output = output + char.ToLower(input[i]);
+            }
+            else
+            {
+                output = output + char.ToUpper(input[i]);
+            }
+        }
+        Console.WriteLine(output);
+    }
+}
+
+//using System;
+public class FindProduct
+{
+    public static void FindProductMain()
+    {
+        const long MOD = 1000000007;
+        int i = int.Parse(Console.ReadLine());
+        long[] Numbers = Array.ConvertAll(Console.ReadLine().Split(' '), long.Parse);
+        long answer = 1;
+        for (int j = 0; j < i; j++)
+        {
+            answer = (answer * Numbers[j]) % MOD;
+        }
+
+        Console.WriteLine(answer);
+
+    }
+}
+
+//using System;
+public class Palindromic
+{
+    public static void PalindromicMain()
+    {
+        string S = Console.ReadLine();
+        string Reverse = "";
+        for (int i = S.Length - 1; i >= 0; i--)
+        {
+            Reverse = Reverse + S[i];
+        }
+        if (S == Reverse)
+        {
+            Console.WriteLine("YES");
+
+        }
+        else
+        {
+            Console.WriteLine("NO");
+        }
+    }
+}
+
+
+//using System;
+public class CountDivisors
+{
+    public static void CountDivisorsMain()
+    {
+        string[] input = Console.ReadLine().Split(' ');
+        int l = int.Parse(input[0]);
+        int r = int.Parse(input[1]);
+        int k = int.Parse(input[2]);
+        int count = 0;
+        for (int i = l; i <= r; i++)
+        {
+            if (10 % 1 == 0)
+            {
+                count++;
+            }
+        }
+        Console.WriteLine(count);
+    }
+}
+
+//using System;
+public class LifeUniverseEverything
+{
+    public static void LifeUniverseEverythingMain()
+    {
+        while (true)
+        {
+            int N = int.Parse(Console.ReadLine());
+            if (N == 42)
+            {
+                break;
+            }
+            Console.WriteLine(N.ToString());
+        }
+    }
+}
+
+
+public class ProfilePic
+{
+    public static void ProfilePicMain()
+    {
+        int L = int.Parse(Console.ReadLine());
+        int N = int.Parse(Console.ReadLine());
+        for (int i = 0; i < N; i++)
+        {
+            int[] Picture = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+            if (Picture[0] < L || Picture[1] < L)
+            {
+                Console.WriteLine("UPLOAD ANOTHER");
+            }
+            else if (Picture[0] == Picture[1])
+            {
+                Console.WriteLine("ACCEPTED");
+            }
+            else
+            {
+                Console.WriteLine("CROP IT");
+            }
         }
     }
 }
