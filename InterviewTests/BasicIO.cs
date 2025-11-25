@@ -397,3 +397,66 @@ public class ProfilePic
         }
     }
 }
+
+
+
+
+
+
+// Medium Level Problems Below
+//Not Working Yet
+//using System;
+public class StepCount
+{
+    public static void StepCountMain()
+    {
+        int N = int.Parse(Console.ReadLine());
+        int[] A = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+        int[] B = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+        int Steps = 0;
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                if (A[i] - B[j] >= A[i])
+                {
+                    A[i] = A[i]- B[j];
+                    Steps++;
+                }
+            }
+        }
+        Console.WriteLine(Steps.ToString());
+    }
+}
+
+
+// Best Indexes:
+//using System;
+public class Index
+{
+    public static void IndexMain()
+    {
+        int Num = int.Parse(Console.ReadLine());
+        int[] A = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+        int max = 0;
+        for (int i = 0; i < Num; i++)
+        {
+            int sum = 0;
+            for (int j = i; j < Num; j++)
+            {
+                if (Num - j > (j + i))
+                {
+                    sum = sum + A[j];
+                }
+            }
+            Console.WriteLine(sum.ToString());
+            if (sum > max)
+            {
+                max = sum;
+            }
+        }
+        Console.WriteLine(max.ToString());
+    }
+}
+
+
